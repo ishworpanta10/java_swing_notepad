@@ -1,0 +1,23 @@
+package Dialog;
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class AboutDialog extends JDialog{
+	public AboutDialog(JFrame owner){
+		super(owner, "About DialogTest", true);
+		add(new JLabel("<html><h3><i>Java Swing</i></h3><hr><p>Ishwor Panta</p></html>"),
+				BorderLayout.CENTER);
+		JPanel panel = new JPanel();
+		JButton ok = new JButton("OK");
+		ok.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent event){
+				setVisible(false);
+			}
+		});
+		panel.add(ok);
+		add(panel, BorderLayout.SOUTH);
+		setSize(250, 150);
+	}
+}

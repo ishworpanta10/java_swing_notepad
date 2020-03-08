@@ -1,0 +1,78 @@
+package swing;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+
+public class LoginDemo {
+
+	public static void main(String[] args) {
+		JFrame frame =  new JFrame("Login Demo");
+		JFrame.setDefaultLookAndFeelDecorated(true);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		frame.setLayout(null);
+		
+		JLabel labelUsername = new JLabel("Username :");
+		labelUsername.setBounds(50, 40, 150, 40);
+		
+		
+		JTextField txtName = new JTextField(20);
+		txtName.setBounds(150, 43, 150, 30);
+		
+		JLabel labelPassword = new JLabel("Password :");
+		labelPassword.setBounds(50, 80, 150, 40);
+		
+		JTextField txtPassword  = new JTextField(20);
+		txtPassword.setBounds(150, 86, 150, 30);
+		
+		JButton btnSubmit = new JButton("Submit");
+		btnSubmit.setBounds(150, 130, 150, 30);
+		
+		frame.add(labelUsername);
+		frame.add(txtName);
+		frame.add(labelPassword);
+		frame.add(txtPassword);
+		frame.add(btnSubmit);
+		
+		frame.setSize(400, 200);
+		frame.setVisible(true);
+		
+		btnSubmit.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String user = "admin";
+				String pass = "s3cret";
+			
+				String username = txtName.getText();
+				System.out.println(username);
+				System.out.println(user);
+				
+				String password = txtPassword.getText();
+				System.out.println(password);
+				System.out.println(pass);
+				
+				String msg = "Login Successful";
+				String unsucc = "Login Faield !";
+				
+				if (username == user) {
+					System.out.println(msg);
+			//		JOptionPane.showMessageDialog(null, msg);
+					
+				}else {
+					System.out.println(unsucc);
+			//		JOptionPane.showMessageDialog(null, unsucc);
+				}
+				
+				
+			}
+		});
+		
+	}
+}

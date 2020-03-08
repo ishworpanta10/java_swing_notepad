@@ -1,0 +1,14 @@
+package Menu;
+
+import javax.swing.JFrame;
+
+public class SwingMenuDemo extends JFrame {
+
+	public static void main(String[] args) {
+			new SwingMenuDemo();
+	}
+	
+	SwingMenuDemo(){
+		
+	}
+}
